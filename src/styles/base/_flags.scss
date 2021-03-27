@@ -14,7 +14,7 @@
 
 .flag:before {
   align-items: center;
-  background-image: url('../../../public/img/flags.svg');
+  background-image: url('/public/img/flags.svg');
   background-position: $flagIconSize center;
   background-repeat: no-repeat;
   background-size: auto $flagIconSize;

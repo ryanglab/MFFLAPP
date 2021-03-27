@@ -23,6 +23,7 @@ class TeamsModal extends React.Component {
         <Modal
           isOpen={!!this.props.isTeamsModalOpen}
           contentLabel="Teams"
+          onRequestClose={this.props.toggleTeamsModal}
           ariaHideApp={false}
           style={{
             overlay: {
