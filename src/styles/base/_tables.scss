@@ -1,0 +1,192 @@
+table {
+  background-color: #fff;
+  border-collapse: collapse;
+  border-spacing: 0;
+  font-size: 1.35rem;
+  line-height: 2rem;
+  width: 100%;
+}
+
+tbody td {
+  border-top: 1px solid $light;
+  padding-bottom: 1.4rem;
+  padding-top: 1.4rem;
+}
+
+td {
+  vertical-align: top;
+}
+
+td.count {
+  color: $medium-light;
+}
+
+td.nopad {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+td:not(.nopad):first-child, th:first-child {
+  padding-left: 2.4rem;
+}
+
+td:not(.nopad):not(:first-child), th:not(:first-child) {
+  padding-left: 0.8rem;
+}
+
+td:not(.nopad):last-child, th:last-child {
+  padding-right: 2.4rem;
+}
+
+td:not(.nopad):not(:last-child), th:not(:last-child) {
+  padding-right: 0.8rem;
+}
+
+th {
+  background-color: $secondary;
+  color: #fff;
+  font-weight: 600;
+  line-height: 3.2rem;
+  position: sticky;
+  text-align: left;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+th svg {
+  margin-left: 0.6rem;
+}
+
+thead tr.bgwhite th {
+  background-color: #fff;
+  color: $secondary;
+}
+
+thead tr.bgwhite th:after {
+  background-color: $secondary;
+  bottom: 0;
+  content: '';
+  height: 0.1rem;
+  left: 0;
+  position: absolute;
+  right: 0;
+}
+
+thead tr:nth-child(1) th {
+  top: 0;
+}
+
+thead tr:nth-child(2) th {
+  top: 3.4rem;
+}
+
+thead tr + tr th:before {
+  content: '';
+  background-color: $light;
+  height: 0.1rem;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+td:first-child, th:first-child {
+  position: sticky;
+  left: 0;
+}
+
+td.active {
+  background-color: $highlight;
+}
+
+td.credit svg, td.debit svg {
+  font-size: 1.2rem;
+  margin-right: 0.8rem;
+}
+
+td.credit {
+  color: #090;
+}
+
+td.debit {
+  color: #900;
+}
+
+tr.taken td {
+  background-color: $highlight;
+  color: $medium;
+}
+
+tr:not(.taken) td:not(.active) {
+  background-color: #fff;
+}
+
+// TEAMS TABLE //
+
+table.teams td:first-child, table.teams td:last-child, table.teams td {
+  padding: 0;
+}
+
+table.teams a {
+  align-items: center;
+  color: inherit;
+  display: flex;
+  justify-content: space-between;
+  line-height: 4.8rem;
+  padding: 0 2.4rem;
+  text-decoration: none;
+}
+
+table.teams a span.owner {
+  color: $medium-light;
+}
+
+// TEAM TABLES //
+
+#main.blitz th {
+  background-color: $blitz;
+}
+
+#main.crabs th {
+  background-color: $crabs;
+}
+
+#main.ewoks th {
+  background-color: $ewoks;
+}
+
+#main.pharaohs th {
+  background-color: $pharaohs;
+}
+
+#main.jerks th {
+  background-color: $jerks;
+}
+
+#main.kamikazes th {
+  background-color: $kamikazes;
+}
+
+#main.renegades th {
+  background-color: $renegades;
+}
+
+#main.scorpions th {
+  background-color: $scorpions;
+}
+
+#main.squirrels th {
+  background-color: $squirrels;
+}
+
+#main.jerky th {
+  background-color: $jerky;
+}
+
+#main.grainers th {
+  background-color: $grainers;
+}
+
+#main.wookiees th {
+  background-color: $wookiees;
+}

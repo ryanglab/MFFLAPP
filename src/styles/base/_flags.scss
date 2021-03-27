@@ -1,0 +1,73 @@
+.flag {
+  align-items: center;
+  color: $secondary;
+  display: inline-flex;
+  font-weight: 600;
+  position: relative;
+  vertical-align: top;
+  white-space: nowrap;
+}
+
+.flag:not(:empty):before {
+  margin-right: 0.8rem;
+}
+
+.flag:before {
+  align-items: center;
+  background-image: url('../../../public/img/flags.svg');
+  background-position: $flagIconSize center;
+  background-repeat: no-repeat;
+  background-size: auto $flagIconSize;
+  content: '';
+  display: flex;
+  height: $flagIconSize;
+  width: $flagIconSize;
+}
+
+.flag.blitz:before {
+  background-position: calc(0 * #{$flagIconSize}) center;
+}
+
+.flag.crabs:before {
+  background-position: calc(-1 * #{$flagIconSize}) center;
+}
+
+.flag.ewoks:before {
+  background-position: calc(-2 * #{$flagIconSize}) center;
+}
+
+.flag.pharaohs:before {
+  background-position: calc(-3 * #{$flagIconSize}) center;
+}
+
+.flag.jerks:before {
+  background-position: calc(-4 * #{$flagIconSize}) center;
+}
+
+.flag.kamikazes:before {
+  background-position: calc(-5 * #{$flagIconSize}) center;
+}
+
+.flag.renegades:before {
+  background-position: calc(-6 * #{$flagIconSize}) center;
+}
+
+.flag.scorpions:before {
+  background-position: calc(-7 * #{$flagIconSize}) center;
+}
+
+.flag.squirrels:before {
+  background-position: calc(-8 * #{$flagIconSize}) center;
+}
+
+.flag.jerky:before {
+  background-position: calc(-9 * #{$flagIconSize}) center;
+}
+
+.flag.grainers:before {
+  background-position: calc(-10 * #{$flagIconSize}) center;
+}
+
+.flag.wookiees:before {
+  background-position: calc(-11 * #{$flagIconSize}) center;
+}

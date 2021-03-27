@@ -1,0 +1,98 @@
+#footer {
+  background-color: #fff;
+  bottom: 0;
+  box-shadow: 0 -4px 8px rgba(35, 40, 45, 0.05);
+  display: flex;
+  height: 4.8rem;
+  position: sticky;
+}
+
+#footer a, #footer button {
+  align-items: center;
+  display: flex;
+  flex: 1;
+  height: 4.8rem;
+  justify-content: center;
+  position: relative;
+}
+
+#footer a.is-active {
+  color: $primary;
+}
+
+#footer a.is-active:after {
+  background-color: $blue;
+  content: '';
+  height: 0.2rem;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+#footer a:not(.is-active) {
+  color: $medium;
+}
+
+#footer a .svg-inline--fa {
+  font-size: 1.5rem;
+}
+
+#footer button {
+  background: none;
+  border: none;
+  border-radius: 0;
+  color: $medium;
+  margin: 0;
+  padding: 0;
+}
+
+// TEAM FOOTERS //
+
+#footer.blitz a.is-active:after {
+  background-color: $blitz;
+}
+
+#footer.crabs a.is-active:after {
+  background-color: $crabs;
+}
+
+#footer.ewoks a.is-active:after {
+  background-color: $ewoks;
+}
+
+#footer.pharaohs a.is-active:after {
+  background-color: $pharaohs;
+}
+
+#footer.jerks a.is-active:after {
+  background-color: $jerks;
+}
+
+#footer.kamikazes a.is-active:after {
+  background-color: $kamikazes;
+}
+
+#footer.renegades a.is-active:after {
+  background-color: $renegades;
+}
+
+#footer.scorpions a.is-active:after {
+  background-color: $scorpions;
+}
+
+#footer.squirrels a.is-active:after {
+  background-color: $squirrels;
+}
+
+#footer.jerky a.is-active:after {
+  background-color: $jerky;
+}
+
+#footer.grainers a.is-active:after {
+  background-color: $grainers;
+}
+
+#footer.wookiees a.is-active:after {
+  background-color: $wookiees;
+}

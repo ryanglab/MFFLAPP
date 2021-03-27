@@ -1,0 +1,43 @@
+#menu {
+  align-content: flex-start;
+  align-items: flex-start;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-start;
+  padding: 1.8rem;
+}
+
+#menu a {
+  align-content: center;
+  align-items: center;
+  background-color: #fff;
+  border: 1px solid $divider;
+  color: $medium-dark;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  font-size: 1.5rem;
+  font-weight: 600;
+  justify-content: center;
+  line-height: 1;
+  padding: 2.4rem 0;
+  text-decoration: none;
+}
+
+#menu a img {
+  max-height: 3.2rem;
+  margin-bottom: 1.2rem;
+}
+
+#menu a .svg {
+  color: inherit;
+  height: 2.8rem;
+  margin-bottom: 1.2rem;
+  width: 2.8rem;
+}
+
+#menu div.item {
+  display: flex;
+  flex-basis: 50%;
+  padding: 0.6rem;
+}

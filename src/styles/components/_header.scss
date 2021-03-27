@@ -1,0 +1,163 @@
+#header {
+  box-shadow: 0 4px 8px rgba(35, 40, 45, 0.05);
+  position: sticky;
+  top: 0;
+}
+
+#header div.primary {
+  background-color: $primary;
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  line-height: 4.8rem;
+}
+
+#header div.primary button {
+  background: none;
+  border: none;
+  border-radius: 0;
+  color: #fff;
+  font-size: 1.6rem;
+  margin: 0;
+  padding: 0;
+  width: 6.4rem;
+}
+
+// #header div.primary button .flag {
+//   z-index: 1;
+// }
+
+// #header div.primary button .flag:after {
+//   background-color: #fff;
+//   border-radius: 50%;
+//   bottom: -0.6rem;
+//   content: '';
+//   left: -0.6rem;
+//   opacity: 0.15;
+//   position: absolute;
+//   right: -0.6rem;
+//   top: -0.6rem;
+//   z-index: -1;
+// }
+
+#header div.primary h1 {
+  flex: 1;
+  font-size: 1.8rem;
+  font-weight: 700;
+  font-family: 'Geomanist', 'MFFL', 'Arial Narrow', sans-serif;
+  line-height: inherit;
+  margin: 0;
+  overflow: hidden;
+  padding: 0;
+  text-align: center;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+#header div.primary h1:first-child {
+  margin-left: 6.4rem;
+}
+
+#header div.primary h1:last-child {
+  margin-right: 6.4rem;
+}
+
+#header div.secondary {
+  background-color: #fff;
+  display: flex;
+  line-height: 4.8rem;
+  overflow-x: auto;
+  padding: 0 1.2rem;
+  white-space: nowrap;
+  -webkit-overflow-scrolling: touch;
+}
+
+#header div.secondary a {
+  display: flex;
+  font-size: 1.4rem;
+  font-weight: 500;
+  line-height: 4.8rem;
+  padding: 0 1.2rem;
+  position: relative;
+  text-decoration: none;
+}
+
+#header div.secondary a.is-active {
+  color: $primary;
+}
+
+#header div.secondary a.is-active:after {
+  background-color: $blue;
+  bottom: 0;
+  content: '';
+  height: 0.2rem;
+  left: 0;
+  position: absolute;
+  right: 0;
+}
+
+#header div.secondary a:not(.is-active) {
+  color: $medium;
+}
+
+// TEAM HEADERS //
+
+#header.blitz div.primary,
+#header.blitz div.secondary a.is-active:after {
+  background-color: $blitz;
+}
+
+#header.crabs div.primary,
+#header.crabs div.secondary a.is-active:after {
+  background-color: $crabs;
+}
+
+#header.ewoks div.primary,
+#header.ewoks div.secondary a.is-active:after {
+  background-color: $ewoks;
+}
+
+#header.pharaohs div.primary,
+#header.pharaohs div.secondary a.is-active:after {
+  background-color: $pharaohs;
+}
+
+#header.jerks div.primary,
+#header.jerks div.secondary a.is-active:after {
+  background-color: $jerks;
+}
+
+#header.kamikazes div.primary,
+#header.kamikazes div.secondary a.is-active:after {
+  background-color: $kamikazes;
+}
+
+#header.renegades div.primary,
+#header.renegades div.secondary a.is-active:after {
+  background-color: $renegades;
+}
+
+#header.scorpions div.primary,
+#header.scorpions div.secondary a.is-active:after {
+  background-color: $scorpions;
+}
+
+#header.squirrels div.primary,
+#header.squirrels div.secondary a.is-active:after {
+  background-color: $squirrels;
+}
+
+#header.jerky div.primary,
+#header.jerky div.secondary a.is-active:after {
+  background-color: $jerky;
+}
+
+#header.grainers div.primary,
+#header.grainers div.secondary a.is-active:after {
+  background-color: $grainers;
+}
+
+#header.wookiees div.primary,
+#header.wookiees div.secondary a.is-active:after {
+  background-color: $wookiees;
+}
