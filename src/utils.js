@@ -7,6 +7,15 @@ export const sortIcons = {
   'DESC': <FontAwesomeIcon icon={faCaretDown} />
 };
 
+export const getFranchiseTitle = (franchises, slug) => {
+  if (franchises && slug) {
+    const franchise = franchises.filter((f) => {
+      return f.slug === slug;
+    });
+    return (franchise.length) ? `${franchise[0].team} ${franchise[0].name}` : 'Franchise';
+  }
+};
+
 export const sortArray = (array, { sort, order }) => {
   return array.sort((a, b) => {
     if (order === 'ASC') {

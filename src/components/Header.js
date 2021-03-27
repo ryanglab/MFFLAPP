@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { Switch, Route, NavLink } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFlag, faSyncAlt } from '@fortawesome/free-solid-svg-icons';
-import { getFranchiseTitle } from '../selectors/selectors';
+import { getFranchiseTitle } from '../utils';
 
 class HeaderDraft extends React.Component {
   render() {
