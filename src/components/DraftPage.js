@@ -15,40 +15,42 @@ class DraftPage extends React.Component {
     const rounds = [...new Set(draftpicks.map(dp => dp.round))];
     rounds.sort();
     return (
-      <table>
+      <React.Fragment>
         {
           rounds.map((rnd) => {
             return (
               <React.Fragment key={rnd}>
-                <thead>
-                  <tr>
-                    <th className="center" colSpan="3">Round {rnd}</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {
-                    draftpicks.map((pick) => {
-                      if (pick.round === rnd) {
-                        return (
-                          <tr key={pick.overall}>
-                            <td className="center">{pick.overall}</td>
-                            <td>
-                              <Link to={`/teams/${pick.fslug}`}><span className={`flag ${pick.fslug}`}>{pick.fabbr}</span></Link>
-                            </td>
-                            <td className="fullW">
-                              {pick.firstname} {pick.lastname}, {pick.pos} / {pick.team}
-                            </td>
-                          </tr>
-                        );
-                      }
-                    })
-                  }
-                </tbody>
+                <table>
+                  <thead>
+                    <tr>
+                      <th className="center" colSpan="3">Round {rnd}</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {
+                      draftpicks.map((pick) => {
+                        if (pick.round === rnd) {
+                          return (
+                            <tr key={pick.overall}>
+                              <td className="center">{pick.overall}</td>
+                              <td>
+                                <Link to={`/teams/${pick.fslug}`}><span className={`flag ${pick.fslug}`}>{pick.fabbr}</span></Link>
+                              </td>
+                              <td className="fullW">
+                                {pick.firstname} {pick.lastname}, {pick.pos} / {pick.team}
+                              </td>
+                            </tr>
+                          );
+                        }
+                      })
+                    }
+                  </tbody>
+                </table>
               </React.Fragment>
             );
           })
         }
-      </table>
+      </React.Fragment>
     );
   }
 }
