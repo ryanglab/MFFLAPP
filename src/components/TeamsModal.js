@@ -34,41 +34,39 @@ class TeamsModal extends React.Component {
             }
           }}
         >
-          <table className="teams">
-            {
-              divisions.map((d) => {
-                return (
-                  <React.Fragment key={d}>
-                    <thead>
-                      <tr>
-                        <th className="center">{d} Division</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      {
-                        franchises.map((f) => {
-                          if (f.division === d) {
-                            const url = `/teams/${f.slug}` + (dirs[2] ? `/${dirs[2]}` : '');
-                            return (
-                              <tr key={f.id}>
-                                <td>
-                                  <Link to={url} onClick={this.props.toggleTeamsModal}>
-                                    <span className={`flag ${f.slug}`}>
-                                      {f.team} {f.name}
-                                    </span>
-                                  </Link>
-                                </td>
-                              </tr>
-                            );
-                          }
-                        })
-                      }
-                    </tbody>
-                  </React.Fragment>
-                );
-              })
-            }
-          </table>
+          {
+            divisions.map((d) => {
+              return (
+                <table className="teams" key={d}>
+                  <thead>
+                    <tr>
+                      <th className="center">{d} Division</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {
+                      franchises.map((f) => {
+                        if (f.division === d) {
+                          const url = `/teams/${f.slug}` + (dirs[2] ? `/${dirs[2]}` : '');
+                          return (
+                            <tr key={f.id}>
+                              <td>
+                                <Link to={url} onClick={this.props.toggleTeamsModal}>
+                                  <span className={`flag ${f.slug}`}>
+                                    {f.team} {f.name}
+                                  </span>
+                                </Link>
+                              </td>
+                            </tr>
+                          );
+                        }
+                      })
+                    }
+                  </tbody>
+                </table>
+              );
+            })
+          }
         </Modal>
       );
     }

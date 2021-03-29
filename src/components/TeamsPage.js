@@ -12,11 +12,11 @@ class TeamsPage extends React.Component {
     const divisions = [...new Set(franchises.map(f => f.division))];
     divisions.sort();
     return (
-      <table className="teams">
+      <React.Fragment>
         {
           divisions.map((d) => {
             return (
-              <React.Fragment key={d}>
+              <table className="teams" key={d}>
                 <thead>
                   <tr>
                     <th className="center">{d} Division</th>
@@ -42,11 +42,11 @@ class TeamsPage extends React.Component {
                     })
                   }
                 </tbody>
-              </React.Fragment>
+              </table>
             );
           })
         }
-      </table>
+      </React.Fragment>
     );
   }
 }
