@@ -31,6 +31,7 @@ class PlayersPage extends React.Component {
     let playersHt = document.querySelector('#players').clientHeight;
     let scrollTop = document.querySelector('#players').scrollTop;
     let loaderTop = document.querySelector('#players tfoot').offsetTop;
+    console.log(scrollTop);
     if (scrollTop + playersHt >= loaderTop) {
       if (isLoading === 0) {
         isLoading = 1;
