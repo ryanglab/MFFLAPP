@@ -7,7 +7,7 @@ import { filterPlayers, loadMore, sortBy, sortIcons, setScrollPosition, updateSc
 
 let isLoading = 0;
 
-class PlayersPage extends React.Component {
+class PlayersAvailablePage extends React.Component {
   constructor(props) {
     super(props);
     this.handleScroll = this.handleScroll.bind(this);
@@ -44,7 +44,7 @@ class PlayersPage extends React.Component {
     const sort = this.props.filters.sort;
     const order = this.props.filters.order;
     const num = this.props.filters.num;
-    const availability = 'all';
+    const availability = 'available';
     const positions = this.props.filters.positions;
     const players = filterPlayers(this.props.data.players, { sort, order, num, availability, positions });
     isLoading = (players.length % num === 0 && players.length > 0) ? 0 : 1;
@@ -136,4 +136,4 @@ const mapStateToProps = (state) => {
   }
 };
 
-export default connect(mapStateToProps)(PlayersPage);
+export default connect(mapStateToProps)(PlayersAvailablePage);

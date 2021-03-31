@@ -1,10 +1,22 @@
 table {
-  background-color: #fff;
   border-collapse: collapse;
   border-spacing: 0;
-  font-size: 1.35rem;
+  font-size: 1.3rem;
   line-height: 2rem;
   width: 100%;
+}
+
+tbody {
+  background-color: #fff;
+}
+
+tbody tr.taken td {
+  background-color: $highlight;
+  color: $medium;
+}
+
+tbody tr:not(.taken) td:not(.active) {
+  background-color: #fff;
 }
 
 tbody td {
@@ -40,6 +52,13 @@ td:not(.nopad):last-child, th:last-child {
 
 td:not(.nopad):not(:last-child), th:not(:last-child) {
   padding-right: 0.8rem;
+}
+
+tfoot.more td {
+  color: $medium-light;
+  font-size: 3.2rem;
+  text-align: center;
+  padding: 2.4rem;
 }
 
 th {
@@ -110,15 +129,6 @@ td.credit {
 
 td.debit {
   color: #900;
-}
-
-tr.taken td {
-  background-color: $highlight;
-  color: $medium;
-}
-
-tr:not(.taken) td:not(.active) {
-  background-color: #fff;
 }
 
 // TEAMS TABLE //

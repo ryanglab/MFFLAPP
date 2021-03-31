@@ -1,11 +1,17 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { sortArray, sortBy, sortIcons } from '../utils';
+import { sortArray, sortBy, sortIcons, setScrollPosition, updateScrollPosition } from '../utils';
 
 class OverviewRostersPage extends React.Component {
   constructor(props) {
     super(props);
+  }
+  componentDidMount() {
+    setScrollPosition(this.props);
+  }
+  componentWillUnmount() {
+    updateScrollPosition(this.props);
   }
   sumPos(array, pos) {
     let sum = 0;

@@ -1,11 +1,17 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { sortArray } from '../utils';
+import { sortArray, setScrollPosition, updateScrollPosition } from '../utils';
 
 class TeamsPage extends React.Component {
   constructor(props) {
     super(props);
+  }
+  componentDidMount() {
+    setScrollPosition(this.props);
+  }
+  componentWillUnmount() {
+    updateScrollPosition(this.props);
   }
   render() {
     const franchises = sortArray(this.props.data.franchises, { sort: 'team', order: 'ASC' });

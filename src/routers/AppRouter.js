@@ -13,7 +13,9 @@ import MenuPage from '../components/MenuPage';
 import NotFoundPage from '../components/NotFoundPage';
 import OverviewPage from '../components/OverviewPage';
 import OverviewRostersPage from '../components/OverviewRostersPage';
+import PlayersAvailablePage from '../components/PlayersAvailablePage';
 import PlayersPage from '../components/PlayersPage';
+import PlayersRFAsPage from '../components/PlayersRFAsPage';
 import PlayersTagsPage from '../components/PlayersTagsPage';
 import TeamsPage from '../components/TeamsPage';
 import PageComponent from '../components/PageComponent';
@@ -48,7 +50,13 @@ class AppRouter extends React.Component {
             (props) => (<PageComponent component={OverviewRostersPage} title="Roster Overview" {...props} />)
           } exact />
           <Route path="/players" render={
-            (props) => (<PageComponent component={PlayersPage} title="Players" {...props} />)
+            (props) => (<PageComponent component={PlayersPage} title="All Players" {...props} />)
+          } exact />
+          <Route path="/players/available" render={
+            (props) => (<PageComponent component={PlayersAvailablePage} title="Best Available Players" {...props} />)
+          } exact />
+          <Route path="/players/rfas" render={
+            (props) => (<PageComponent component={PlayersRFAsPage} title="Restricted Free Agents" {...props} />)
           } exact />
           <Route path="/players/tags" render={
             (props) => (<PageComponent component={PlayersTagsPage} title="Tagged Players" {...props} />)

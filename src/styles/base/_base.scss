@@ -82,7 +82,14 @@ h1, h2, h3 {
   line-height: 1.4;
 }
 
-h1, h2, header .secondary a, th, #menu a, #news button.more {
+button,
+h1,
+h2,
+header .secondary a,
+th,
+#menu a,
+#news button.more,
+.ReactModalPortal form fieldset legend {
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;

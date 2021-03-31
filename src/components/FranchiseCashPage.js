@@ -2,11 +2,17 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMinus, faPlus } from '@fortawesome/free-solid-svg-icons';
-import { sortArray, sortBy, sortIcons } from '../utils';
+import { sortArray, sortBy, sortIcons, setScrollPosition, updateScrollPosition } from '../utils';
 
 class FranchiseCashPage extends React.Component {
   constructor(props) {
     super(props);
+  }
+  componentDidMount() {
+    setScrollPosition(this.props);
+  }
+  componentWillUnmount() {
+    updateScrollPosition(this.props);
   }
   render() {
     const slug = this.props.match.params.slug;

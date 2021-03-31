@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { Switch, Route, NavLink } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faFlag, faSyncAlt } from '@fortawesome/free-solid-svg-icons';
+import { faFilter, faSyncAlt } from '@fortawesome/free-solid-svg-icons';
 import { getFranchiseTitle } from '../utils';
 
 class HeaderDraft extends React.Component {
@@ -48,6 +48,8 @@ class HeaderPlayers extends React.Component {
     return (
       <React.Fragment>
         <NavLink to="/players" activeClassName="is-active" exact>All Players</NavLink>
+        <NavLink to="/players/available" activeClassName="is-active" exact>Best Available</NavLink>
+        <NavLink to="/players/rfas" activeClassName="is-active" exact>RFAs</NavLink>
         <NavLink to="/players/tags" activeClassName="is-active" exact>Tags</NavLink>
       </React.Fragment>
     );
@@ -55,10 +57,19 @@ class HeaderPlayers extends React.Component {
 }
 
 const headerButtonLeft = props => {
-  const path = props.path;
+  const path = props.match.url;
+  const dirs = path.substring(1).split('/');
   // a franchise page
   if (props.match.params.slug) {
     return <button><span className={`flag ${props.match.params.slug}`}></span></button>;
+  }
+  // players page
+  else if (dirs[0] === 'players') {
+    return <button onClick={() => { props.togglePlayersModal(); }}><FontAwesomeIcon icon={faFilter} /></button>;
+  }
+  // draft rookies page
+  else if (path === '/draft/rookies') {
+    return <button onClick={() => { props.toggleDraftRookiesModal(); }}><FontAwesomeIcon icon={faFilter} /></button>;
   }
   else {
     return null;

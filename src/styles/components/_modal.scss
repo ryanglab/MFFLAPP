@@ -1,0 +1,57 @@
+.ReactModalPortal form button {
+  align-items: center;
+  border: none;
+  border-radius: 0;
+  display: flex;
+  height: 4.8rem;
+  margin: 0;
+  padding: 0 2.4rem;
+  width: 100%;
+}
+
+.ReactModalPortal form button.option {
+  background: none;
+  border-bottom: 1px solid $light;
+  justify-content: space-between;
+  text-align: left;
+}
+
+.ReactModalPortal form button.submit {
+  background-color: $blue;
+  color: #fff;
+  font-weight: 600;
+  line-height: 4.8rem;
+  justify-content: center;
+}
+
+.ReactModalPortal form button.option.selected {
+  font-weight: 600;
+  line-height: 4.8rem;
+}
+
+.ReactModalPortal form button.option svg {
+  color: $blue;
+}
+
+.ReactModalPortal form div.button {
+  padding: 1.2rem;
+}
+
+.ReactModalPortal form fieldset {
+  border: none;
+  margin: 0;
+  padding: 0;
+}
+
+.ReactModalPortal form fieldset legend {
+  background-color: $secondary;
+  color: #fff;
+  display: block;
+  font-weight: 600;
+  line-height: 3.2rem;
+  position: sticky;
+  text-align: center;
+  text-transform: uppercase;
+  white-space: nowrap;
+  width: 100%;
+}

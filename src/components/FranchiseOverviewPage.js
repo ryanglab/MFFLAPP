@@ -1,10 +1,16 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { sortArray, sortBy, sortIcons } from '../utils';
+import { sortArray, sortBy, sortIcons, setScrollPosition, updateScrollPosition } from '../utils';
 
 class FranchiseOverviewPage extends React.Component {
   constructor(props) {
     super(props);
+  }
+  componentDidMount() {
+    setScrollPosition(this.props);
+  }
+  componentWillUnmount() {
+    updateScrollPosition(this.props);
   }
   render() {
     const slug = this.props.match.params.slug;
