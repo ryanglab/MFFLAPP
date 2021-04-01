@@ -59,7 +59,7 @@ class PlayersAvailablePage extends React.Component {
             >
               #{sort === 'rank' ? sortIcons[order] : ''}
             </th>
-            <th className='center'></th>
+            <th className='center'>&nbsp;</th>
             <th
               className='center'
               data-key='posid'
@@ -74,7 +74,7 @@ class PlayersAvailablePage extends React.Component {
             >
               Player{sort === 'firstname' ? sortIcons[order] : ''}
             </th>
-            <th className='center'></th>
+            <th className='center'>&nbsp;</th>
             <th
               className='right'
               data-key='2021'
