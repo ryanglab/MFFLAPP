@@ -111,8 +111,7 @@ export const taggedPlayers = (array) => {
 
 export const setScrollPosition = (props) => {
   const pathName = props.location.pathname;
-  const playersDiv = document.querySelector('#players');
-  const scrollBody = playersDiv ? playersDiv : document.querySelector('#main');
+  const scrollBody = document.querySelector('#main');
   const scrollTop = scrollBody ? scrollBody.scrollTop : 0;
   // parse sessionStorage['appData'] as actual object
   let appData = JSON.parse(sessionStorage['appData']);
@@ -133,8 +132,7 @@ export const setScrollPosition = (props) => {
 
 export const updateScrollPosition = (props) => {
   const pathName = props.location.pathname;
-  const playersDiv = document.querySelector('#players');
-  const scrollBody = playersDiv ? playersDiv : document.querySelector('#main');
+  const scrollBody = document.querySelector('#main');
   const scrollTop = scrollBody ? scrollBody.scrollTop : 0;
   if (pathName) {
     // parse sessionStorage['appData'] as actual object
