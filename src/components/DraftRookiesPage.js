@@ -13,8 +13,8 @@ class DraftRookiesPage extends React.Component {
   }
   componentDidMount() {
     setScrollPosition(this.props);
-    if (isLoading === 0 && document.querySelector('#players')) {
-      document.querySelector('#players').addEventListener('scroll', this.handleScroll, true);
+    if (isLoading === 0 && document.querySelector('#main')) {
+      document.querySelector('#main').addEventListener('scroll', this.handleScroll, true);
     }
   }
   componentWillUnmount() {
@@ -22,14 +22,14 @@ class DraftRookiesPage extends React.Component {
     this.breakScroll();
   }
   breakScroll() {
-    if (document.querySelector('#players')) {
-      document.querySelector('#players').removeEventListener('scroll', this.handleScroll, true);
+    if (document.querySelector('#main')) {
+      document.querySelector('#main').removeEventListener('scroll', this.handleScroll, true);
     }
   }
   handleScroll() {
-    let playersHt = document.querySelector('#players').clientHeight;
-    let scrollTop = document.querySelector('#players').scrollTop;
-    let loaderTop = document.querySelector('#players tfoot').offsetTop;
+    let playersHt = document.querySelector('#main').clientHeight;
+    let scrollTop = document.querySelector('#main').scrollTop;
+    let loaderTop = document.querySelector('#main tfoot').offsetTop;
     if (scrollTop + playersHt >= loaderTop) {
       if (isLoading === 0) {
         isLoading = 1;
@@ -47,55 +47,53 @@ class DraftRookiesPage extends React.Component {
     const players = filterRookies(this.props.data.rookies, { sort, order, num, positions });
     isLoading = (players.length % num === 0 && players.length > 0) ? 0 : 1;
     return (
-      <div id="players">
-        <table>
-          <thead>
-            <tr>
-              <th
-                className='center'
-                data-key='rank'
-                onClick={(props) => { this.props.dispatch(sortBy({ key, sort, order, props })) }}
-              >
-                Rank{sort === 'rank' ? sortIcons[order] : ''}
-              </th>
-              <th
-                className='center'
-                data-key='pos'
-                onClick={(props) => { this.props.dispatch(sortBy({ key, sort, order, props })) }}
-              >
-                Pos{sort === 'pos' ? sortIcons[order] : ''}
-              </th>
-              <th
-                className='left fullW'
-                data-key='firstname'
-                onClick={(props) => { this.props.dispatch(sortBy({ key, sort, order, props })) }}
-              >
-                Player{sort === 'firstname' ? sortIcons[order] : ''}
-              </th>
-            </tr>
-          </thead>
-          <tbody>
-            {
-              players.map((p) => {
-                return (
-                  <tr key={p.id}>
-                    <td className={`center` + (sort === 'rank' ? ' active' : '')}>{p.rank}</td>
-                    <td className={`center` + (sort === 'pos' ? ' active' : '')}>{p.pos}</td>
-                    <td className={`left` + (sort === 'firstname' ? ' active' : '')}>{p.firstname} {p.lastname}, {p.team}</td>
-                  </tr>
-                );
-              })
-            }
-          </tbody>
-          <tfoot className="more">
-            <tr>
-              <td colSpan="6">
-                {isLoading === 0 && <FontAwesomeIcon icon={faSpinner} className="fa-spin" />}
-              </td>
-            </tr>
-          </tfoot>
-        </table>
-      </div>
+      <table>
+        <thead>
+          <tr>
+            <th
+              className='center'
+              data-key='rank'
+              onClick={(props) => { this.props.dispatch(sortBy({ key, sort, order, props })) }}
+            >
+              Rank{sort === 'rank' ? sortIcons[order] : ''}
+            </th>
+            <th
+              className='center'
+              data-key='pos'
+              onClick={(props) => { this.props.dispatch(sortBy({ key, sort, order, props })) }}
+            >
+              Pos{sort === 'pos' ? sortIcons[order] : ''}
+            </th>
+            <th
+              className='left fullW'
+              data-key='firstname'
+              onClick={(props) => { this.props.dispatch(sortBy({ key, sort, order, props })) }}
+            >
+              Player{sort === 'firstname' ? sortIcons[order] : ''}
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          {
+            players.map((p) => {
+              return (
+                <tr key={p.id}>
+                  <td className={`center` + (sort === 'rank' ? ' active' : '')}>{p.rank}</td>
+                  <td className={`center` + (sort === 'pos' ? ' active' : '')}>{p.pos}</td>
+                  <td className={`left` + (sort === 'firstname' ? ' active' : '')}>{p.firstname} {p.lastname}, {p.team}</td>
+                </tr>
+              );
+            })
+          }
+        </tbody>
+        <tfoot className="more">
+          <tr>
+            <td colSpan="6">
+              {isLoading === 0 && <FontAwesomeIcon icon={faSpinner} className="fa-spin" />}
+            </td>
+          </tr>
+        </tfoot>
+      </table>
     );
   }
 }
