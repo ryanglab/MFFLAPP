@@ -110,41 +110,42 @@ export const taggedPlayers = (array) => {
 };
 
 export const setScrollPosition = (props) => {
-  const pathName = props.location.pathname;
-  const scrollBody = document.querySelector('#main');
-  const scrollTop = scrollBody ? scrollBody.scrollTop : 0;
-  // parse sessionStorage['appData'] as actual object
-  let appData = JSON.parse(sessionStorage['appData']);
-  // does the current component exist in the components array?
-  let currentComponent = appData.components.find(x => x.path == pathName);
-  // if NOT exists
-  if (!currentComponent) {
-    // set currentComponent to new object
-    currentComponent = { path: pathName, scrollTop: scrollTop };
-    // add component to appData
-    appData.components.push(currentComponent);
-    // update sessionStorage
-    sessionStorage.setItem('appData', JSON.stringify(appData));
-  }
-  // set scrollBody scrollTop
-  scrollBody.scrollTop = currentComponent.scrollTop;
+  // const pathName = props.location.pathname;
+  // const scrollBody = document.querySelector('#main');
+  // const scrollTop = scrollBody ? scrollBody.scrollTop : 0;
+  // // parse sessionStorage['appData'] as actual object
+  // let appData = JSON.parse(sessionStorage['appData']);
+  // // does the current component exist in the components array?
+  // let currentComponent = appData.components.find(x => x.path == pathName);
+  // // if NOT exists
+  // if (!currentComponent) {
+  //   // set currentComponent to new object
+  //   currentComponent = { path: pathName, scrollTop: scrollTop };
+  //   // add component to appData
+  //   appData.components.push(currentComponent);
+  //   // update sessionStorage
+  //   sessionStorage.setItem('appData', JSON.stringify(appData));
+  // }
+  // // set scrollBody scrollTop
+  // scrollBody.scrollTop = currentComponent.scrollTop; console.log(scrollBody.scrollTop);
 };
 
 export const updateScrollPosition = (props) => {
-  const pathName = props.location.pathname;
-  const scrollBody = document.querySelector('#main');
-  const scrollTop = scrollBody ? scrollBody.scrollTop : 0;
-  if (pathName) {
-    // parse sessionStorage['appData'] as actual object
-    let appData = JSON.parse(sessionStorage['appData']);
-    // does the current component exist in the components array?
-    let currentComponent = appData.components.find(x => x.path == pathName);
-    // if component exists, update it
-    if (currentComponent) {
-      // update currentComponent scrollTop
-      currentComponent.scrollTop = scrollTop;
-      // update sessionStorage
-      sessionStorage.setItem('appData', JSON.stringify(appData));
-    }
-  }
+  // const pathName = props.location.pathname;
+  // const scrollBody = document.querySelector('#main');
+  // const scrollTop = scrollBody ? scrollBody.scrollTop : 0;
+  // if (pathName) {
+  //   // parse sessionStorage['appData'] as actual object
+  //   let appData = JSON.parse(sessionStorage['appData']);
+  //   // does the current component exist in the components array?
+  //   let currentComponent = appData.components.find(x => x.path == pathName);
+  //   // if component exists, update it
+  //   if (currentComponent) {
+  //     // update currentComponent scrollTop
+  //     currentComponent.scrollTop = scrollTop;
+  //     // update sessionStorage
+  //     sessionStorage.setItem('appData', JSON.stringify(appData));
+  //   }
+  // }
+  // console.log(scrollBody.scrollTop);
 };

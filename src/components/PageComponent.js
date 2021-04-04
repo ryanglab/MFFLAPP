@@ -9,7 +9,6 @@ import TeamsModal from './TeamsModal';
 class PageComponent extends React.Component {
   constructor(props) {
     super(props);
-    this.handleScroll = this.handleScroll.bind(this);
     this.toggleDraftRookiesModal = this.toggleDraftRookiesModal.bind(this);
     this.togglePlayersModal = this.togglePlayersModal.bind(this);
     this.toggleTeamsModal = this.toggleTeamsModal.bind(this);
@@ -19,30 +18,12 @@ class PageComponent extends React.Component {
       isTeamsModalOpen: false
     };
   }
-  componentDidMount() {
-    document.querySelector('#main').addEventListener('scroll', this.handleScroll, true);
-  }
-  handleScroll() {
-    let scrollTop = document.querySelector('#main').scrollTop;
-  }
   componentDidUpdate(prevProps) {
     if (this.props.location !== prevProps.location) {
-      // let appData = JSON.parse(sessionStorage['appData']);
-      // let componentsArray = (!appData['components']) ? [] : appData['components'];
-      // let currentComponent = componentsArray.find(x => x.path === this.props.location.pathname);
-      // let scrollTop = (currentComponent) ? currentComponent.scrollTop : 0;
-
-      // const playersDiv = document.querySelector('#players');
-      // const scrollBody = playersDiv ? playersDiv : document.querySelector('#main');
-
-      // scrollBody.scrollTo(0, scrollTop);
-      // const scrollInt = setInterval(() => {
-      //   if (scrollBody.scrollTop !== scrollTop) {
-      //     scrollBody.scrollTop = scrollTop;
-      //   } else {
-      //     clearInterval(scrollInt);
-      //   }
-      // }, 10);
+      const frame = document.querySelector('#main');
+      if (frame) {
+        frame.scrollTop = 0;
+      }
     }
   }
   toggleDraftRookiesModal() {

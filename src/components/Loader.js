@@ -1,11 +1,15 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faSpinner } from '@fortawesome/free-solid-svg-icons';
+import { faCircleNotch, faSpinner } from '@fortawesome/free-solid-svg-icons';
 
 const Loader = () => {
   return (
     <div id="loader">
-      <FontAwesomeIcon icon={faSpinner} className="fa-spin" />
+      <img src="/img/logo.svg" />
+      <div>
+        <FontAwesomeIcon icon={faCircleNotch} className="fa-spin" />
+        <h2>Loading</h2>
+      </div>
     </div>
   );
 };
