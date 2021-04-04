@@ -31,8 +31,7 @@
 #loader h2 {
   color: $medium-light;
   font-family: 'MFFL', 'Arial Narrow', sans-serif;
-  font-size: 4vh;
-  letter-spacing: 0.025rem;
+  font-size: 3vh;
   margin-top: 2vh;
   text-transform: uppercase;
 }
@@ -43,5 +42,5 @@
 
 #loader svg {
   color: $medium;
-  font-size: 8vh;
+  font-size: 6vh;
 }

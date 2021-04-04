@@ -64,10 +64,10 @@ export default class MFFLApp extends React.Component {
         type: 'SET_APP_DATA',
         appData: result
       });
-      return (
-        <Provider store={store}>
-          <AppRouter />
-        </Provider>
+      return (<Loader/>
+        // <Provider store={store}>
+        //   <AppRouter />
+        // </Provider>
       )
     }
   }
